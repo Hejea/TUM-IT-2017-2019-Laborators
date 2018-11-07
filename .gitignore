@@ -1,0 +1,52 @@
+
+
+# semester 1
+**/Dreptul
+**/EC
+**/Engleza
+**/Filosofia
+**/Matematica I
+**/Mecanica
+**/PC/Note de Curs
+
+**/GI/**/*.pdf
+**/GI/**/*.bak
+
+**/obj/
+
+*.cbp
+*.depend
+*.layout
+*.o
+*.h
+*.js
+*.htm
+*.iml
+*.pas
+~$*.docx
+
+
+
+
+# semester 2
+**/Economia
+**/Engleza II
+**/Fizica
+**/Matematica II
+**/Matematici Discrete/MD LAB
+**/Note de Curs
+**/.idea/
+**/out
+**/Structuri de Date si Algoritmi/Seminar
+**/Structuri de Date si Algoritmi/**/Conditia
+**/Structuri de Date si Algoritmi/SDA Lucrare de An/*.rar
+**/Teoria Probabilitatii si Informatiei
+
+
+
+
+
+# semester 3
+**/CDE
+**/Teorie
+**/Partea 2/Hejea MMC Lab 1
