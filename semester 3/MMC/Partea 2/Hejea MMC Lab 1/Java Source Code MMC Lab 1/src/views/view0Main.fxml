@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerMain">
+   <children>
+       <VBox fx:id="vBox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <children>
+            <Pane>
+               <children>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <fx:include fx:id="tab2" source="view1Chord.fxml" />
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+          </children>
+       </VBox>
+   </children>
+</AnchorPane>

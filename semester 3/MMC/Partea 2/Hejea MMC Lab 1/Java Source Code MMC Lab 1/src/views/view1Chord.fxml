@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane style="-fx-background-color: #bbbbbb;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerView1Chord">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <Pane layoutX="10.0" layoutY="10.0" style="-fx-background-color: #bbbbbb;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox>
+                    <children>
+                        <GridPane>
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <HBox alignment="CENTER_RIGHT" prefWidth="150.0" GridPane.rowIndex="2">
+                                    <children>
+                                        <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="25.0" text="Eps = ">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="idFieldEps" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="25.0" prefWidth="75.0" promptText="0.001" text="0.000001" />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="TOP_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefWidth="100.0">
+                                    <children>
+                                        <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="25.0" text="a = ">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="idFieldA" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="25.0" prefWidth="75.0" promptText="[ a, b ]" />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                    <children>
+                                        <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="25.0" text="b = ">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="idFieldB" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="25.0" prefWidth="75.0" promptText="[ a, b ]" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </GridPane>
+                        <Separator prefHeight="20.0" valignment="BOTTOM" />
+                        <HBox>
+                            <children>
+                                <Pane style="-fx-background-color: #bbbbbb;">
+                                    <children>
+                                        <VBox>
+                                            <children>
+                                                <Label prefHeight="25.0" prefWidth="0.0" />
+                                                <HBox alignment="CENTER">
+                                                    <children>
+                                                        <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" text="Metoda Coardelor">
+                                                            <font>
+                                                                <Font name="System Bold" size="18.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </HBox>
+                                                <Label prefHeight="25.0" prefWidth="0.0" />
+                                                <GridPane vgap="10.0">
+                                                    <children>
+                                                        <HBox alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="200.0">
+                                                            <children>
+                                                                <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="25.0" text="Max Iteration = ">
+                                                                    <font>
+                                                                        <Font size="14.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="idFieldMaxItr" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="25.0" prefWidth="75.0" promptText="0.001" />
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox alignment="CENTER_RIGHT" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                            <children>
+                                                                <Button fx:id="idBtnCalculeaza" mnemonicParsing="false" onAction="#callChord" text="Calculeaza" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                    <columnConstraints>
+                                                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                </GridPane>
+                                                <Label prefHeight="25.0" prefWidth="0.0" />
+                                                <HBox>
+                                                    <children>
+                                                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="75.0" text="Iteratia">
+                                                            <font>
+                                                                <Font name="System Bold" size="18.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="200.0" text="x">
+                                                            <font>
+                                                                <Font name="System Bold Italic" size="18.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="150.0" text="precizie  Eps">
+                                                            <font>
+                                                                <Font name="System Bold" size="18.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="200.0" text="f ( x )">
+                                                            <font>
+                                                                <Font name="System Bold Italic" size="18.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </HBox>
+                                    <Label prefHeight="10.0" prefWidth="0.0" />
+                                    <VBox fx:id="idOuterContainer">
+                                       <children>
+                                                        <VBox fx:id="idContainer0">
+                                                            <children>
+                                                                <HBox fillHeight="false">
+                                                                    <children>
+                                                                        <TextField prefWidth="75.0" />
+                                                                        <TextField prefWidth="200.0" />
+                                                                        <TextField prefWidth="150.0" />
+                                                                        <TextField prefWidth="200.0" />
+                                                                    </children>
+                                                                </HBox>
+                                                            </children>
+                                                        </VBox>
+                                       </children>
+                                    </VBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </Pane>
+                                <Separator orientation="VERTICAL" prefWidth="50.0" />
+                                <Pane style="-fx-background-color: #bbbbbb;">
+                                    <children>
+                                        <VBox>
+                                            <children>
+                                                <Label prefHeight="25.0" prefWidth="0.0" />
+                                                <HBox alignment="CENTER">
+                                                    <children>
+                                                        <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" text="Metoda Secantelor">
+                                                            <font>
+                                                                <Font name="System Bold" size="18.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </HBox>
+                                                <Label prefHeight="25.0" prefWidth="0.0" />
+                                                <GridPane vgap="10.0">
+                                                    <children>
+                                                        <HBox alignment="CENTER_RIGHT" prefWidth="150.0">
+                                                            <children>
+                                                                <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="25.0" text="Max Iteration = ">
+                                                                    <font>
+                                                                        <Font size="14.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="idFieldMaxItr1" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="25.0" prefWidth="75.0" promptText="0.001" />
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox alignment="CENTER_RIGHT" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                            <children>
+                                                                <Button fx:id="idBtnCalculeaza1" mnemonicParsing="false" onAction="#callSecant" text="Calculeaza" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                    <columnConstraints>
+                                                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                </GridPane>
+                                                <Label prefHeight="25.0" prefWidth="0.0" />
+                                                <HBox>
+                                                    <children>
+                                                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="75.0" text="Iteratia">
+                                                            <font>
+                                                                <Font name="System Bold" size="18.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="200.0" text="x">
+                                                            <font>
+                                                                <Font name="System Bold Italic" size="18.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="150.0" text="precizie  Eps">
+                                                            <font>
+                                                                <Font name="System Bold" size="18.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="200.0" text="f ( x )">
+                                                            <font>
+                                                                <Font name="System Bold Italic" size="18.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </HBox>
+                                    <Label prefHeight="10.0" prefWidth="0.0" />
+                                    <VBox fx:id="idOuterContainer1">
+                                       <children>
+                                                        <VBox fx:id="idContainer1">
+                                                            <children>
+                                                                <HBox fillHeight="false">
+                                                                    <children>
+                                                                        <TextField prefWidth="75.0" />
+                                                                        <TextField prefWidth="200.0" />
+                                                                        <TextField prefWidth="150.0" />
+                                                                        <TextField prefWidth="200.0" />
+                                                                    </children>
+                                                                </HBox>
+                                                            </children>
+                                                        </VBox>
+                                       </children>
+                                    </VBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

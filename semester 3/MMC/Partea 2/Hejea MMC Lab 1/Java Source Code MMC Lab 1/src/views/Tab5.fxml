@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+<AnchorPane style="-fx-background-color: #bbbbbb;" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CTab5">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <Pane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0">
+        <VBox>
+            <Pane>
+                <padding>
+                    <Insets bottom="10.0"/>
+                </padding>
+                <VBox>
+                    <HBox fx:id="base5Tab1"/>
+                </VBox>
+            </Pane>
+        </VBox>
+    </Pane>
+</AnchorPane>
