@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.input.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<MenuBar xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuComponets.CMenu">
+  <menus>
+    <Menu mnemonicParsing="false" text="File">
+      <items>
+            <MenuItem fx:id="idNew" mnemonicParsing="false" onAction="#onClickNew" text="New">
+               <accelerator>
+                  <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+            </MenuItem>
+            <MenuItem fx:id="idOpen" mnemonicParsing="false" onAction="#onClickOpen" text="Open">
+               <accelerator>
+                  <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator></MenuItem>
+            <Menu fx:id="idSaveAs" mnemonicParsing="false" text="Save As">
+               <items>
+                  <MenuItem fx:id="idSave0" mnemonicParsing="false" onAction="#onClickSave" text="Matrice de Adiacenta" />
+                  <MenuItem fx:id="idSave1" mnemonicParsing="false" onAction="#onClickSave" text="Matrice de Incidenta" />
+                  <MenuItem fx:id="idSave2" mnemonicParsing="false" onAction="#onClickSave" text="Lista de Adiacenta" />
+               </items>
+            </Menu>
+        <MenuItem fx:id="idClose" mnemonicParsing="false" onAction="#onClickClose" text="Close" />
+      </items>
+    </Menu>
+    <Menu mnemonicParsing="false" text="Edit">
+      <items>
+            <MenuItem fx:id="idEdit" mnemonicParsing="false" onAction="#onClickEdit" text="Edit" />
+            <MenuItem fx:id="idDelete" mnemonicParsing="false" onAction="#onClickDelete" text="Delete Graph" />
+      </items>
+    </Menu>
+    <Menu mnemonicParsing="false" text="Help">
+      <items>
+        <MenuItem mnemonicParsing="false" text="About" />
+      </items>
+    </Menu>
+  </menus>
+</MenuBar>

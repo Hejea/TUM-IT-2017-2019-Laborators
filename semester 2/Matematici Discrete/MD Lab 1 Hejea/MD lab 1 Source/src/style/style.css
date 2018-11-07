@@ -1,0 +1,113 @@
+.remove-button-cell {
+    -fx-background-color: #c99696;
+    -fx-border-color: #cccccc;
+    -fx-text-fill: #eeeeee;
+    -fx-max-width: 35px;
+    -fx-min-width: 35px;
+    -fx-max-height: 27px;
+    -fx-min-height: 27px;
+}
+.remove-button-cell:hover {
+    -fx-background-color: #e44848;
+    -fx-text-fill: #ffffff;
+}
+
+.add-button-cell {
+    -fx-background-color: #70d670;
+    -fx-font-weight: bold;
+    -fx-border-color: #cccccc;
+    -fx-alignment: center;
+    -fx-min-width: 35px;
+    -fx-max-width: 35px;
+    -fx-max-height: 27px;
+    -fx-min-height: 27px;
+    -fx-label-padding: -6px;
+}
+
+.add-button-cell:hover {
+    -fx-background-color: #2dc42d;
+}
+
+.text-cell {
+    -fx-background-color: #cccccc;
+    -fx-border-color: #eeeeee;
+    -fx-alignment: center;
+    -fx-max-width: 35px;
+    -fx-min-width: 35px;
+}
+.text-cell:hover {
+    -fx-background-color: #eeeeee;
+    -fx-border-color: #ffffff;
+}
+
+.label-cell {
+    -fx-background-color: darkgray;
+    -fx-alignment: center;
+    -fx-max-width: 35px;
+    -fx-min-width: 35px;
+    -fx-max-height: 27px;
+    -fx-min-height: 27px;
+    -fx-border-color: #cccccc;
+}
+
+.apply-button {
+    -fx-background-color: #008000;
+    -fx-border-width: 1px;
+    -fx-text-fill: #eeeeee;
+    -fx-font-weight: bold;
+}
+.apply-button:hover {
+    -fx-background-color: #00a000;
+}
+
+.text-cell-disable {
+    -fx-background-color: #c2c2c2;
+    -fx-border-width: 1px;
+    -fx-border-color: #cfcfcf;
+    -fx-text-fill: #848484;
+}
+.text-cell-disable:hover {
+    -fx-background-color: #c2c2c2;
+    -fx-border-color: #eeeeee;
+    -fx-text-fill: #848484;
+}
+
+.label-cell-disable {
+    -fx-background-color: #b4b4b4;
+    -fx-border-color: #c2c2c2;
+    -fx-text-fill: #848484;
+}
+
+.button-cell-remove-disable {
+    -fx-background-color: #70d670;
+}
+
+.button-cell-remove-disable:hover {
+    -fx-background-color: #2dc42d;
+}
+
+.new-aedge {
+    -fx-max-width: 50px;
+    -fx-min-width: 50px;
+    -fx-background-color: #333399;
+    -fx-border-color: #ffffff;
+    -fx-alignment: center;
+
+}
+
+.title-aedge {
+    -fx-max-width: 100px;
+    -fx-min-width: 100px;
+    -fx-wrap-text: true;
+    -fx-alignment: center;
+    -fx-padding: 10px;
+}
+
+.rowEmpty {
+    -fx-max-width: 35px;
+    -fx-min-width: 35px;
+    -fx-max-height: 27px;
+    -fx-min-height: 27px;
+}
+
+
