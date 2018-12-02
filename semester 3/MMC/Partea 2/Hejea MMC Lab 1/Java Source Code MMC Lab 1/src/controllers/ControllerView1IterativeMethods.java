@@ -2,7 +2,6 @@ package controllers;
 
 import app.components.Methods;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
@@ -12,7 +11,7 @@ import javafx.scene.text.FontWeight;
 
 import java.text.DecimalFormat;
 
-public class ControllerView1Chord {
+public class ControllerView1IterativeMethods {
     
     @FXML
     public TextField idFieldA;
@@ -69,55 +68,63 @@ public class ControllerView1Chord {
         } catch (NumberFormatException e) {System.out.println(e.toString());}
     }
     
-    public void syncData(VBox where, int i, double[] valueOf_x, double[] valueOf_Fx) {
+    public void syncData(VBox where, String errorTxt, int i, double[] valueOf_x, double[] valueOf_Fx) {
         DecimalFormat df = new DecimalFormat(stringPatern());
         
         where.getChildren().clear();
         
+        TextField error;
         TextField iteration;
         TextField valueX;
         TextField valueXPrecision;
         TextField valueFx;
         HBox      box;
         String    s;
-        
-        s = String.valueOf(df.format(valueOf_x[i]));
-        //s = s.substring(0, s.length() - 1);
-        
-        iteration = new TextField(String.valueOf(i + 1));
-        valueX = new TextField(String.format("%.20f", valueOf_x[i]));
-        valueXPrecision = new TextField(s);
-        valueFx = new TextField(String.format("%.20f", valueOf_Fx[i]));
-        
-        
+    
         Font font = Font.font("System", FontWeight.MEDIUM, 14);
         
-        int s1 = 150, s2 = 200;
-        iteration.setPrefWidth(75);
-        valueX.setPrefWidth(s2);
-        valueXPrecision.setPrefWidth(s1);
-        valueFx.setPrefWidth(s2);
-        
-        iteration.setFont(font);
-        valueX.setFont(font);
-        valueXPrecision.setFont(font);
-        valueFx.setFont(font);
-        
-        box = new HBox();
-        box.getChildren().addAll(iteration, valueX, valueXPrecision, valueFx);
+        if (errorTxt.equals("")) {
+            s = String.valueOf(df.format(valueOf_x[i]));
+            //s = s.substring(0, s.length() - 1);
+    
+            iteration = new TextField("x" + String.valueOf(i));
+            valueX = new TextField(String.format("%.20f", valueOf_x[i]));
+            valueXPrecision = new TextField(s.substring(0, s.length() - 1));
+            valueFx = new TextField(String.format("%.20f", valueOf_Fx[i]));
+    
+            int s1 = 150, s2 = 200;
+            iteration.setPrefWidth(75);
+            valueX.setPrefWidth(s2);
+            valueXPrecision.setPrefWidth(s1);
+            valueFx.setPrefWidth(s2);
+    
+            iteration.setFont(font);
+            valueX.setFont(font);
+            valueXPrecision.setFont(font);
+            valueFx.setFont(font);
+    
+            box = new HBox();
+            box.getChildren().addAll(iteration, valueX, valueXPrecision, valueFx);
+        } else {
+            error = new TextField(errorTxt);
+            error.setPrefWidth(300);
+            error.setFont(font);
+            box = new HBox();
+            box.getChildren().add(error);
+        }
         where.getChildren().add(box);
     }
     
     public void callChord() {
         setData();
         methods.runChord();
-        syncData(idContainer0, methods.nrItrC, methods.xC, methods.fxC);
+        syncData(idContainer0, methods.isSolC, methods.nrItrC, methods.xC, methods.fxC);
     }
     
     public void callSecant() {
         setData();
         methods.runSecant();
-        syncData(idContainer1, methods.nrItrS, methods.xS, methods.fxS);
+        syncData(idContainer1, methods.isSolS, methods.nrItrS, methods.xS, methods.fxS);
     }
     
     private int countEpsDigits() {

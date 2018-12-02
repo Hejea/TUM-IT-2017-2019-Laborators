@@ -14,7 +14,7 @@
                <children>
                   <HBox alignment="CENTER_LEFT">
                      <children>
-                        <fx:include fx:id="tab2" source="view1Chord.fxml" />
+                        <fx:include fx:id="tab2" source="view1IterativeMethods.fxml" />
                      </children>
                   </HBox>
                </children>

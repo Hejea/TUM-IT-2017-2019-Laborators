@@ -17,18 +17,23 @@ public class Methods {
     public int      nrItrS;
     public int      nrItrMaxChord;
     public int      nrItrMaxSecant;
+    public String   isSolC;
+    public String   isSolS;
     
     public void runChord() {
         
-        double xf, fa, fxf, q, w;
+        double xf, fa, fb, fxf, q, w;
         
         xC = new double[nrItrMaxChord];
         fxC = new double[nrItrMaxChord];
+        nrItrC = 0;
+        isSolC = "";
         
         validData();
         fa = F(a);
+        fb = F(b);
         
-        if (fa * F(b) < 0) {
+        if (fa * fb < 0) {
             
             if (fa * F2(a) < 0) {
                 xC[0] = a;
@@ -41,11 +46,10 @@ public class Methods {
             fxC[0] = F(xC[0]);
             fxf = F(xf);
             
-            nrItrC = 0;
-            
             do {
                 nrItrC++;
-                
+    
+                // ce trebuie de inteles
                 // q = f(x0) * (xF - x0)
                 // w = f(xF) - f(x0)
                 
@@ -56,37 +60,41 @@ public class Methods {
                 fxC[nrItrC] = F(xC[nrItrC]);
                 
             } while (abs(xC[nrItrC] - xC[nrItrC - 1]) > eps);
+        } else {
+            isSolC = "Nu are solutii pe intervalul dat";
         }
     }
     
     public void runSecant() {
         
-        double fa, q, w;
+        double fa, fb, q, w;
         
         xS = new double[nrItrMaxChord];
         fxS = new double[nrItrMaxChord];
+        nrItrS = 0;
+        isSolS = "";
         
         validData();
         fa = F(a);
-        
-        if (fa * F(b) < 0) {
-            
+        fb = F(b);
+        if (fa * fb < 0) {
             if (fa * F2(a) > 0) {
                 xS[0] = a;
                 xS[1] = a + eps;
             } else {
                 xS[0] = b;
-                xS[1] = b + eps;
+                xS[1] = b - eps;
             }
             
             fxS[0] = F(xS[0]);
             fxS[1] = F(xS[1]);
-            
+    
             nrItrS = 1;
             
             do {
                 nrItrS++;
                 
+                // ce trebuie de inteles
                 // q = f(x1) * (x1 - x0)
                 // w = f(x1) - f(x0)
                 
@@ -96,7 +104,9 @@ public class Methods {
                 xS[nrItrS] = xS[nrItrS - 1] - q / w;
                 fxS[nrItrS] = F(xS[nrItrS]);
                 
-            } while (abs(xS[nrItrS] - xS[nrItrS - 1]) > eps);
+            } while (abs(xS[nrItrS] - xS[nrItrS - 1]) >= eps);
+        } else {
+            isSolS = "Nu are solutii pe intervalul dat";
         }
     }
     

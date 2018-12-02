@@ -17,6 +17,7 @@ public class OpenFromFile {
     
     public OpenFromFile(File file, CMain cMain) {
         this.file = file;
+        System.out.println(file);
         this.cMain = cMain;
     }
     

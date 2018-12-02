@@ -14,12 +14,13 @@ public class ControllerMain {
     @FXML
     public VBox vBox;
     
+    
     @FXML
     public void initialize() {
         System.out.println("Main Controller Starts");
         
         ChangeListener<Number> stageSizeListener = (observable, oldValue, newValue) -> {
-            System.out.println("Height: " + appMainStage.getHeight() + " Width: " + appMainStage.getWidth());
+            //System.out.println("Height: " + appMainStage.getHeight() + " Width: " + appMainStage.getWidth());
             vBox.setMaxWidth(500);
             vBox.setPrefWidth(500);
             vBox.setMaxHeight(appMainStage.getHeight());
