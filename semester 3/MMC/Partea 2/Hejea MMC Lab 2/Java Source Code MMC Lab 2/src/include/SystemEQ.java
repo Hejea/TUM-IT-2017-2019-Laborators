@@ -33,6 +33,7 @@ public class SystemEQ {
                 j++;
             }
         }
+        
         if (j == 0) throw new Exception("Nu sunt date");
         if (j != nRow * (nCol + 1)) throw new Exception("Nu sunt destule date");
         

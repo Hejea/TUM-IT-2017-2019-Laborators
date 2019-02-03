@@ -144,31 +144,28 @@ public class Controller02Jacobi {
         idVectorX.setText(s.toString());
     }
     
-    void rewriteSystemEq() {
+    void rewriteSystemEq() throws Exception {
         SystemEQ systemEQ = new SystemEQ();
-        try {
-            systemEQ.init();
-            idSystemEq.setText("");
-            
-            StringBuilder s   = new StringBuilder();
-            int           nsp = 6;
-            int           i, j;
-            int           n   = systemEQ.Eq.length;
-            
-            df.newDecimalPattern(5, 2);
-            
-            for (i = 0; i < n; i++) {
-                for (j = 0; j < n + 1; j++) {
-                    s.append(String.format("%" + nsp + "s", String.valueOf(df.format(systemEQ.Eq[i][j]))));
-                }
-                s.append("\n");
+        
+        systemEQ.init();
+        idSystemEq.setText("");
+        
+        StringBuilder s   = new StringBuilder();
+        int           nsp = 6;
+        int           i, j;
+        int           n   = systemEQ.Eq.length;
+        
+        df.newDecimalPattern(5, 2);
+        
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < n + 1; j++) {
+                s.append(String.format("%" + nsp + "s", String.valueOf(df.format(systemEQ.Eq[i][j]))));
             }
-            
-            idSystemEq.setText(s.toString());
-            
-        } catch (Exception e) {
-            showError(e);
+            s.append("\n");
         }
+        
+        idSystemEq.setText(s.toString());
+        
     }
     
     public void initData() {
